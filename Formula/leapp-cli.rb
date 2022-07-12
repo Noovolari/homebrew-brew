@@ -1,14 +1,19 @@
+require "language/node"
+
 class LeappCli < Formula
   desc "Install Leapp CLI"
   homepage "https://leapp.cloud"
-  version "0.1.13"
-  url "https://noovolari-leapp-website-distribution-cli.s3.eu-west-1.amazonaws.com/0.1.13/leapp-v0.1.13-5c08db5-darwin-x64.tar.xz"
-  sha256 "63590211a832dcb12c5cf130c8e79f7db7a354d9323c0b52bcfe8f927eb272c4"
+  version "0.1.14"
+  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.14.tgz"
+  sha256 "df15db24f3d2c29d6df81cd44f7358061e8699fda0c190e781b5e5b7fec51a3b"
+
+  depends_on "node"
+  depends_on "libsecret"
+  depends_on "python" => :build
 
   def install
-    inreplace "bin/leapp", /^CLIENT_HOME=/, "export LEAPP_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
-    libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/leapp"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec).reject { |a| a == "--build-from-source" }
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
