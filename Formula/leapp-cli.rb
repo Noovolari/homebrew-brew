@@ -3,9 +3,9 @@ require "language/node"
 class LeappCli < Formula
   desc "Install Leapp CLI"
   homepage "https://leapp.cloud"
-  version "0.1.16"
-  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.16.tgz"
-  sha256 "10f23f18a1eee148b28122b2196bc80ecb875b4f47f35d6dfc9b71e688a9567b"
+  version "0.1.17"
+  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.17.tgz"
+  sha256 "7ba69db4b1d16194fa3f7bdaff61f9fc0facad6644eef96b5dc18382714879d0"
 
   depends_on "node"
   depends_on "libsecret"
