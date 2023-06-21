@@ -1,9 +1,9 @@
 class LeappCliDarwinArm64 < Formula
   desc "Install Leapp CLI"
   homepage "https://leapp.cloud"
-  version "0.1.37"
-  url "https://noovolari-leapp-website-distribution-cli.s3.eu-west-1.amazonaws.com/0.1.37/leapp-v0.1.37-b97c368-darwin-x64.tar.xz"
-  sha256 "b5642555af3d399763784f1a44f5ce31adc6fa939d4f1cac30a33e9a36e3187d"
+  version "0.1.38"
+  url "https://noovolari-leapp-website-distribution-cli.s3.eu-west-1.amazonaws.com/0.1.38/leapp-v0.1.38-3594d8c-darwin-x64.tar.xz"
+  sha256 "2236dc2bf7e157244ab76b5783b328385bc226c508acacbd7ca3f68f0719539b"
 
   def install
     inreplace "bin/leapp", /^CLIENT_HOME=/, "export LEAPP_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
